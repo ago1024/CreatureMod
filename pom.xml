@@ -13,9 +13,17 @@
 		<dependency>
 			<groupId>org.gotti.wurmunlimited</groupId>
 			<artifactId>server-modlauncher</artifactId>
-			<version>0.17.0-SNAPSHOT</version>
+			<version>0.18</version>
 		</dependency>
 	</dependencies>
+
+	<repositories>
+		<repository>
+			<id>gotti-no-ip-org-ssh-repository</id>
+			<url>http://gotti.no-ip.org/maven/repository</url>
+		</repository>
+	</repositories>
+	
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
