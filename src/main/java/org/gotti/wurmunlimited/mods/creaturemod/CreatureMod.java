@@ -1,7 +1,7 @@
 package org.gotti.wurmunlimited.mods.creaturemod;
 
 import org.gotti.wurmunlimited.modloader.interfaces.Initable;
-import org.gotti.wurmunlimited.modloader.interfaces.WurmMod;
+import org.gotti.wurmunlimited.modloader.interfaces.WurmServerMod;
 import org.gotti.wurmunlimited.mods.creaturemod.creatures.Bull;
 import org.gotti.wurmunlimited.mods.creaturemod.creatures.Calf;
 import org.gotti.wurmunlimited.mods.creaturemod.creatures.Cat;
@@ -19,7 +19,7 @@ import org.gotti.wurmunlimited.mods.creaturemod.creatures.Zebra;
 import org.gotti.wurmunlimited.modsupport.creatures.ModCreature;
 import org.gotti.wurmunlimited.modsupport.creatures.ModCreatures;
 
-public class CreatureMod implements WurmMod, Initable {
+public class CreatureMod implements WurmServerMod, Initable {
 	public void init() {
 		ModCreatures.init();
 		ModCreatures.addCreature((ModCreature) new PandaBear());
