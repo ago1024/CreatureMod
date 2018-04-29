@@ -15,8 +15,8 @@ public class Horse implements ModCreature {
 	private static final int COLOR_PIEBALD = 33;
 	private static final int COLOR_MANGA_LARGA_MARCHADOR = 32;
 	private static final int COLOR_ROCKY_MOUNTAIN = 30;
-	private static final int COLOR_XAPPALOOSA = 29;
-	private static final int COLOR_KNABSTRUPPER = 28;
+	private static final int COLOR_XAPPALOOSA = 34;
+	private static final int COLOR_KNABSTRUPPER = 35;
 	private static final int COLOR_SKEWBALD = 26;
 	private static final int COLOR_REGULAR_BAY = 31;
 	private static final int COLOR_EBONY_BLACK = ModTraits.COLOR_EBONY_BLACK;
