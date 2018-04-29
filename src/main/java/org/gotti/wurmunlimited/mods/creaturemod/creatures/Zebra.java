@@ -12,7 +12,7 @@ import com.wurmonline.shared.constants.ItemMaterials;
 
 import org.gotti.wurmunlimited.modsupport.vehicles.ModVehicleBehaviour;
 import org.gotti.wurmunlimited.modsupport.CreatureTemplateBuilder;
-import com.wurmonline.server.creatures.CreatureTypes;
+import com.wurmonline.shared.constants.CreatureTypes;
 import org.gotti.wurmunlimited.modsupport.creatures.ModCreature;
 import static com.wurmonline.server.skills.SkillList.*;
 import static com.wurmonline.server.items.ItemList.*;

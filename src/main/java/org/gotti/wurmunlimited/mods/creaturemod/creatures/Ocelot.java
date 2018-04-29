@@ -3,7 +3,7 @@ package org.gotti.wurmunlimited.mods.creaturemod.creatures;
 import org.gotti.wurmunlimited.modsupport.creatures.EncounterBuilder;
 import com.wurmonline.mesh.Tiles;
 import org.gotti.wurmunlimited.modsupport.CreatureTemplateBuilder;
-import com.wurmonline.server.creatures.CreatureTypes;
+import com.wurmonline.shared.constants.CreatureTypes;
 import com.wurmonline.shared.constants.ItemMaterials;
 
 import org.gotti.wurmunlimited.modsupport.creatures.ModCreature;
