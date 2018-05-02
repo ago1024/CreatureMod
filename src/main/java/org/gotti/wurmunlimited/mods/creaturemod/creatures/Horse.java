@@ -55,10 +55,12 @@ public class Horse implements ModCreature {
 		};
 	}
 
+	@Override
 	public boolean hasTraits() {
 		return true;
 	}
 
+	@Override
 	public String getTraitName(final int trait) {
 		switch (trait) {
 		case COLOR_EBONY_BLACK:
@@ -86,6 +88,35 @@ public class Horse implements ModCreature {
 		}
 	}
 
+	@Override
+	public String getColourName(final int trait) {
+		switch (trait) {
+		case COLOR_EBONY_BLACK:
+			return "ebony black";
+		case COLOR_PIEBALD_PINTO:
+			return "piebald pinto";
+		case COLOR_BLOOD_BAY:
+			return "blood bay";
+		case COLOR_SKEWBALD:
+			return "skewbald";
+		case COLOR_KNABSTRUPPER:
+			return "knabstrupper";
+		case COLOR_XAPPALOOSA:
+			return "knabstrupperxappaloosa";
+		case COLOR_ROCKY_MOUNTAIN:
+			return "rocky mountain";
+		case COLOR_REGULAR_BAY:
+			return "regular bay";
+		case COLOR_MANGA_LARGA_MARCHADOR:
+			return "mangalarga marchador";
+		case COLOR_PIEBALD:
+			return "piebald";
+		default:
+			return null;
+		}
+	}
+
+	@Override
 	public void assignTraits(final TraitsSetter traitsSetter) {
 		int rand = Server.rand.nextInt(110);
 		if (rand < 30) {
