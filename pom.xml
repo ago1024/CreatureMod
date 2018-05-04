@@ -4,7 +4,7 @@
 
 	<groupId>org.gotti.wurmunlimited</groupId>
 	<artifactId>creaturemod</artifactId>
-	<version>2.3</version>
+	<version>2.4</version>
 	<packaging>jar</packaging>
 
 	<name>creaturemod</name>
@@ -13,7 +13,7 @@
 		<dependency>
 			<groupId>org.gotti.wurmunlimited</groupId>
 			<artifactId>server-modlauncher</artifactId>
-			<version>0.35-beta1</version>
+			<version>0.35</version>
 		</dependency>
 	</dependencies>
 
