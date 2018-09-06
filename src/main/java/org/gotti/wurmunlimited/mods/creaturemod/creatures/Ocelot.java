@@ -2,6 +2,8 @@ package org.gotti.wurmunlimited.mods.creaturemod.creatures;
 
 import org.gotti.wurmunlimited.modsupport.creatures.EncounterBuilder;
 import com.wurmonline.mesh.Tiles;
+import com.wurmonline.server.combat.ArmourTemplate;
+
 import org.gotti.wurmunlimited.modsupport.CreatureTemplateBuilder;
 import com.wurmonline.shared.constants.CreatureTypes;
 import com.wurmonline.shared.constants.ItemMaterials;
@@ -37,7 +39,7 @@ public class Ocelot implements ModCreature, CreatureTypes, ItemMaterials {
 		builder.handDamString("claw");
 		builder.kickDamString("claw");
 		builder.maxAge(100);
-		builder.armourType(6);
+		builder.armourType(ArmourTemplate.ARMOUR_TYPE_CLOTH);
 		builder.baseCombatRating(3.0f);
 		builder.combatDamageType((byte) 1);
 		builder.maxGroupAttackSize(2);

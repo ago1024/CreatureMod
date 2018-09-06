@@ -6,7 +6,7 @@ import org.gotti.wurmunlimited.modsupport.vehicles.VehicleFacade;
 import com.wurmonline.server.creatures.Creature;
 import com.wurmonline.server.MiscConstants;
 import com.wurmonline.server.behaviours.Vehicle;
-import com.wurmonline.server.combat.ArmourTypes;
+import com.wurmonline.server.combat.ArmourTemplate;
 import com.wurmonline.server.items.Item;
 import com.wurmonline.shared.constants.ItemMaterials;
 
@@ -17,7 +17,7 @@ import org.gotti.wurmunlimited.modsupport.creatures.ModCreature;
 import static com.wurmonline.server.skills.SkillList.*;
 import static com.wurmonline.server.items.ItemList.*;
 
-public class Zebra implements ModCreature, CreatureTypes, ItemMaterials, MiscConstants, ArmourTypes {
+public class Zebra implements ModCreature, CreatureTypes, ItemMaterials, MiscConstants {
 
 	private int templateId;
 
@@ -45,7 +45,7 @@ public class Zebra implements ModCreature, CreatureTypes, ItemMaterials, MiscCon
 		builder.combatDamageType((byte) 0);
 		builder.alignment(100.0f);
 		builder.handDamString("kick");
-		builder.armourType(ARMOUR_CLOTH);
+		builder.armourType(ArmourTemplate.ARMOUR_TYPE_CLOTH);
 		builder.isHorse(true);
 		builder.maxPercentOfCreatures(0.02f);
 

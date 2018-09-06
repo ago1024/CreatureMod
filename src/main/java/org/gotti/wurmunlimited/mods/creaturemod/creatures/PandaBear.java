@@ -4,6 +4,18 @@
 
 package org.gotti.wurmunlimited.mods.creaturemod.creatures;
 
+import static com.wurmonline.server.items.ItemList.fur;
+import static com.wurmonline.server.items.ItemList.meat;
+import static com.wurmonline.server.items.ItemList.tooth;
+import static com.wurmonline.server.skills.SkillList.BODY_CONTROL;
+import static com.wurmonline.server.skills.SkillList.BODY_STAMINA;
+import static com.wurmonline.server.skills.SkillList.BODY_STRENGTH;
+import static com.wurmonline.server.skills.SkillList.MIND_LOGICAL;
+import static com.wurmonline.server.skills.SkillList.MIND_SPEED;
+import static com.wurmonline.server.skills.SkillList.SOUL_DEPTH;
+import static com.wurmonline.server.skills.SkillList.SOUL_STRENGTH;
+import static com.wurmonline.server.skills.SkillList.WEAPONLESS_FIGHTING;
+
 import org.gotti.wurmunlimited.modsupport.CreatureTemplateBuilder;
 import org.gotti.wurmunlimited.modsupport.creatures.EncounterBuilder;
 import org.gotti.wurmunlimited.modsupport.creatures.ModCreature;
@@ -12,19 +24,16 @@ import org.gotti.wurmunlimited.modsupport.vehicles.VehicleFacade;
 
 import com.wurmonline.mesh.Tiles;
 import com.wurmonline.server.behaviours.Vehicle;
-import com.wurmonline.server.combat.ArmourTypes;
+import com.wurmonline.server.combat.ArmourTemplate;
 import com.wurmonline.server.creatures.AttackAction;
 import com.wurmonline.server.creatures.AttackIdentifier;
 import com.wurmonline.server.creatures.AttackValues;
 import com.wurmonline.server.creatures.Creature;
-import com.wurmonline.shared.constants.CreatureTypes;
 import com.wurmonline.server.items.Item;
+import com.wurmonline.shared.constants.CreatureTypes;
 import com.wurmonline.shared.constants.ItemMaterials;
 
-import static com.wurmonline.server.skills.SkillList.*;
-import static com.wurmonline.server.items.ItemList.*;
-
-public class PandaBear implements ModCreature, CreatureTypes, ItemMaterials, ArmourTypes {
+public class PandaBear implements ModCreature, CreatureTypes, ItemMaterials {
 
 	private int templateId;
 
@@ -50,7 +59,7 @@ public class PandaBear implements ModCreature, CreatureTypes, ItemMaterials, Arm
 		builder.boundsValues(-0.5f, -1.0f, 0.5f, 1.42f);
 		builder.handDamString("maul");
 		builder.maxAge(200);
-		builder.armourType(ARMOUR_STUDDED);
+		builder.armourType(ArmourTemplate.ARMOUR_TYPE_STUDDED);
 		builder.baseCombatRating(9.0f);
 		builder.combatDamageType((byte) 0);
 		builder.maxGroupAttackSize(4);
