@@ -13,7 +13,7 @@
 		<dependency>
 			<groupId>org.gotti.wurmunlimited</groupId>
 			<artifactId>server-modlauncher</artifactId>
-			<version>0.39-beta1</version>
+			<version>0.44</version>
 		</dependency>
 	</dependencies>
 

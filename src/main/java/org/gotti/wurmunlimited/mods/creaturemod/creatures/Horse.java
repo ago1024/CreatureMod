@@ -12,13 +12,6 @@ import org.gotti.wurmunlimited.modsupport.creatures.ModTraits;
 
 public class Horse implements ModCreature {
 
-	private static final int COLOR_PIEBALD = 33;
-	private static final int COLOR_MANGA_LARGA_MARCHADOR = 32;
-	private static final int COLOR_ROCKY_MOUNTAIN = 30;
-	private static final int COLOR_XAPPALOOSA = 34;
-	private static final int COLOR_KNABSTRUPPER = 35;
-	private static final int COLOR_SKEWBALD = 26;
-	private static final int COLOR_REGULAR_BAY = 31;
 	private static final int COLOR_EBONY_BLACK = ModTraits.COLOR_EBONY_BLACK;
 	private static final int COLOR_BLOOD_BAY = ModTraits.COLOR_BLOOD_BAY;
 	private static final int COLOR_PIEBALD_PINTO = ModTraits.COLOR_PIEBALD_PINTO;
@@ -27,21 +20,30 @@ public class Horse implements ModCreature {
 	private static final int COLOR_GOLD = ModTraits.COLOR_GOLD;
 	private static final int COLOR_BROWN = ModTraits.COLOR_BROWN;
 	
-	private static final int COLOR_TRAITS = 
-			1 << COLOR_PIEBALD |
-			1 << COLOR_MANGA_LARGA_MARCHADOR | 
-			1 << COLOR_ROCKY_MOUNTAIN | 
-			1 << COLOR_XAPPALOOSA |
-			1 << COLOR_KNABSTRUPPER | 
+	private static final int COLOR_SKEWBALD_PINTO = ModTraits.COLOR_SKEWBALD_PINTO;
+	private static final int COLOR_GOLD_BUCKSKIN = ModTraits.COLOR_GOLD_BUCKSKIN;
+	private static final int COLOR_BLACK_SILVER = ModTraits.COLOR_BLACK_SILVER;
+	private static final int COLOR_APPALOOSA = ModTraits.COLOR_APPALOOSA;
+	private static final int COLOR_CHESTNUT = ModTraits.COLOR_CHESTNUT;
+	
+	
+	private static final int COLOR_SKEWBALD = 26;
+	private static final int COLOR_KNABSTRUPPER = 35;
+	private static final int COLOR_ROCKY_MOUNTAIN = 36;
+	private static final int COLOR_REGULAR_BAY = 37;
+	private static final int COLOR_MANGA_LARGA_MARCHADOR = 38;
+	private static final int COLOR_PIEBALD = 39;
+	private static final int COLOR_XAPPALOOSA = 40;
+	
+	
+	private static final int COLOR_TRAITS = ModTraits.COLOR_TRAITS |
 			1 << COLOR_SKEWBALD |
+			1 << COLOR_KNABSTRUPPER |
+			1 << COLOR_ROCKY_MOUNTAIN |
 			1 << COLOR_REGULAR_BAY |
-			1 << COLOR_EBONY_BLACK |
-			1 << COLOR_BLOOD_BAY |
-			1 << COLOR_PIEBALD_PINTO |
-			1 << COLOR_WHITE |
-			1 << COLOR_BLACK |
-			1 << COLOR_GOLD |
-			1 << COLOR_BROWN;
+			1 << COLOR_MANGA_LARGA_MARCHADOR |
+			1 << COLOR_PIEBALD |
+			1 << COLOR_XAPPALOOSA;
 
 	public CreatureTemplateBuilder createCreateTemplateBuilder() {
 		return new CreatureTemplateBuilder(CreatureTemplateIds.HORSE_CID) {
@@ -63,6 +65,14 @@ public class Horse implements ModCreature {
 	@Override
 	public String getTraitName(final int trait) {
 		switch (trait) {
+		case COLOR_BROWN:
+			return "brown";
+		case COLOR_GOLD:
+			return "gold";
+		case COLOR_BLACK:
+			return "black";
+		case COLOR_WHITE:
+			return "white";
 		case COLOR_EBONY_BLACK:
 			return "ebonyblack";
 		case COLOR_PIEBALD_PINTO:
@@ -91,6 +101,14 @@ public class Horse implements ModCreature {
 	@Override
 	public String getColourName(final int trait) {
 		switch (trait) {
+		case COLOR_BROWN:
+			return "brown";
+		case COLOR_GOLD:
+			return "gold";
+		case COLOR_BLACK:
+			return "black";
+		case COLOR_WHITE:
+			return "white";
 		case COLOR_EBONY_BLACK:
 			return "ebony black";
 		case COLOR_PIEBALD_PINTO:
@@ -102,7 +120,7 @@ public class Horse implements ModCreature {
 		case COLOR_KNABSTRUPPER:
 			return "knabstrupper";
 		case COLOR_XAPPALOOSA:
-			return "knabstrupperxappaloosa";
+			return "knabstrupper appaloosa";
 		case COLOR_ROCKY_MOUNTAIN:
 			return "rocky mountain";
 		case COLOR_REGULAR_BAY:
@@ -118,7 +136,7 @@ public class Horse implements ModCreature {
 
 	@Override
 	public void assignTraits(final TraitsSetter traitsSetter) {
-		int rand = Server.rand.nextInt(110);
+		int rand = Server.rand.nextInt(135);
 		if (rand < 30) {
 			traitsSetter.setTraitBit(COLOR_BROWN, true);
 		} else if (rand < 40) {
@@ -147,6 +165,16 @@ public class Horse implements ModCreature {
 			traitsSetter.setTraitBit(COLOR_XAPPALOOSA, true);
 		} else if (rand < 110) {
 			traitsSetter.setTraitBit(COLOR_ROCKY_MOUNTAIN, true);
+		} else if (rand < 115) {
+			traitsSetter.setTraitBit(COLOR_SKEWBALD_PINTO, true);
+		} else if (rand < 120) {
+			traitsSetter.setTraitBit(COLOR_GOLD_BUCKSKIN, true);
+		} else if (rand < 125) {
+			traitsSetter.setTraitBit(COLOR_BLACK_SILVER, true);
+		} else if (rand < 130) {
+			traitsSetter.setTraitBit(COLOR_APPALOOSA, true);
+		} else if (rand < 135) {
+			traitsSetter.setTraitBit(COLOR_CHESTNUT, true);
 		}
 	}
 	
