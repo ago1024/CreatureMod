@@ -81,6 +81,16 @@ public class Horse implements ModCreature {
 			return "bloodbay";
 		case COLOR_SKEWBALD:
 			return "skewbald";
+		case COLOR_SKEWBALD_PINTO:
+			return "skewbaldpinto";
+		case COLOR_GOLD_BUCKSKIN:
+			return "goldbuckskin";
+		case COLOR_BLACK_SILVER:
+			return "blacksilver";
+		case COLOR_APPALOOSA:
+			return "appaloosa";
+		case COLOR_CHESTNUT:
+			return "chestnut";
 		case COLOR_KNABSTRUPPER:
 			return "knabstrupper";
 		case COLOR_XAPPALOOSA:
@@ -117,6 +127,16 @@ public class Horse implements ModCreature {
 			return "blood bay";
 		case COLOR_SKEWBALD:
 			return "skewbald";
+		case COLOR_SKEWBALD_PINTO:
+			return "skewbaldpinto";
+		case COLOR_GOLD_BUCKSKIN:
+			return "gold buckskin";
+		case COLOR_BLACK_SILVER:
+			return "black silver";
+		case COLOR_APPALOOSA:
+			return "appaloosa";
+		case COLOR_CHESTNUT:
+			return "chestnut";
 		case COLOR_KNABSTRUPPER:
 			return "knabstrupper";
 		case COLOR_XAPPALOOSA:
