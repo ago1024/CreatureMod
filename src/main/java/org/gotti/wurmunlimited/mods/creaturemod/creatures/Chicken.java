@@ -11,18 +11,35 @@ import org.gotti.wurmunlimited.modsupport.creatures.ModCreature;
 import org.gotti.wurmunlimited.modsupport.creatures.ModTraits;
 
 public class Chicken implements ModCreature {
+	private static final int COLOR_DEFAULT_1 = 15;
+	private static final int COLOR_DEFAULT_2 = 16;
+
 	private static final int COLOR_SILVER_CAMPINE = 26;
 	private static final int COLOR_RHODE_ISLAND_RED = 25;
 	private static final int COLOR_AUSTRALORP = 24;
+	private static final int COLOR_TRAITS =
+			1 << COLOR_DEFAULT_1 |
+			1 << COLOR_DEFAULT_2 |
+			1 << COLOR_AUSTRALORP |
+			1 << COLOR_RHODE_ISLAND_RED |
+			1 << COLOR_SILVER_CAMPINE;
 
-	public CreatureTemplateBuilder createCreateTemplateBuilder() {
-		return new CreatureTemplateBuilder(CreatureTemplateIds.CHICKEN_CID) {
+	protected int getTemplateId() {
+		return CreatureTemplateIds.CHICKEN_CID;
+	}
+
+	final protected CreatureTemplate getTemplate() {
+		try {
+			return CreatureTemplateFactory.getInstance().getTemplate(getTemplateId());
+		} catch (NoSuchCreatureTemplateException e) {
+			throw new RuntimeException(e);
+		}
+	}
+
+	final public CreatureTemplateBuilder createCreateTemplateBuilder() {
+		return new CreatureTemplateBuilder(getTemplateId()) {
 			public CreatureTemplate build() {
-				try {
-					return CreatureTemplateFactory.getInstance().getTemplate(CreatureTemplateIds.CHICKEN_CID);
-				} catch (NoSuchCreatureTemplateException e) {
-					throw new RuntimeException((Throwable) e);
-				}
+				return getTemplate();
 			}
 		};
 	}
@@ -34,6 +51,9 @@ public class Chicken implements ModCreature {
 	@Override
 	public String getTraitName(final int trait) {
 		switch (trait) {
+		case COLOR_DEFAULT_1:
+		case COLOR_DEFAULT_2:
+			return getTemplate().getTemplateColourName(trait).replaceAll(" ", "");
 		case COLOR_AUSTRALORP:
 			return "australorp";
 		case COLOR_RHODE_ISLAND_RED:
@@ -48,6 +68,9 @@ public class Chicken implements ModCreature {
 	@Override
 	public String getColourName(final int trait) {
 		switch (trait) {
+		case COLOR_DEFAULT_1:
+		case COLOR_DEFAULT_2:
+			return getTemplate().getTemplateColourName(trait);
 		case COLOR_AUSTRALORP:
 			return "australorp";
 		case COLOR_RHODE_ISLAND_RED:
@@ -60,18 +83,23 @@ public class Chicken implements ModCreature {
 	}
 
 	public void assignTraits(final TraitsSetter traitsSetter) {
-		if (Server.rand.nextInt(4) == 0) {
+		int rand = Server.rand.nextInt(70);
+		if (rand < 30) {
+			traitsSetter.setTraitBit(COLOR_DEFAULT_1, true);
+		} else if (rand < 40) {
+			traitsSetter.setTraitBit(COLOR_DEFAULT_2, true);
+		} else if (rand < 50) {
 			traitsSetter.setTraitBit(COLOR_AUSTRALORP, true);
-		} else if (Server.rand.nextInt(4) == 0) {
+		} else if (rand < 60) {
 			traitsSetter.setTraitBit(COLOR_RHODE_ISLAND_RED, true);
-		} else if (Server.rand.nextInt(4) == 0) {
+		} else if (rand < 70) {
 			traitsSetter.setTraitBit(COLOR_SILVER_CAMPINE, true);
 		}
 	}
 	
 	@Override
 	public long calcNewTraits(double breederSkill, boolean inbred, long mothertraits, long fathertraits) {
-		return ModTraits.calcNewTraits(breederSkill, inbred, mothertraits, fathertraits, ModTraits.REGULAR_TRAITS, 1 << COLOR_AUSTRALORP | 1 << COLOR_RHODE_ISLAND_RED | 1 << COLOR_SILVER_CAMPINE);
+		return ModTraits.calcNewTraits(breederSkill, inbred, mothertraits, fathertraits, ModTraits.REGULAR_TRAITS, COLOR_TRAITS);
 	}
 	
 }
